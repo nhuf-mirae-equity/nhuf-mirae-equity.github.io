@@ -13,18 +13,33 @@
       margin: 0;
       font-family: sans-serif;
       font-size: 2rem;
-      background-color: #f5f5f5;
+      background-color: skyblue;
     }
     p {
-      color: skyblue;
+      color: white;
     }
     .black-text {
+      color: black;
+    }
+    #today-date {
+      position: fixed;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 1rem;
       color: black;
     }
   </style>
 </head>
 <body>
+  <div id="today-date"></div>
   <p>미래에셋자산운용 주택도시기금 주식 Dash Board</p>
   <p class="black-text">한유진 똥개</p>
+  <script>
+    const today = new Date();
+    const formatted = today.getFullYear() + '-' +
+      String(today.getMonth() + 1).padStart(2, '0') + '-' +
+      String(today.getDate()).padStart(2, '0');
+    document.getElementById('today-date').textContent = formatted;
+  </script>
 </body>
 </html>
